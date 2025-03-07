@@ -1,3 +1,82 @@
+/* Thiết lập các kiểu dáng cho màn hình nhỏ (điện thoại) */
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    .card {
+        width: 90%;
+        height: auto;
+        max-width: 500px;
+        box-shadow: 0px 5px 15px rgba(255, 182, 193, 0.6);
+    }
+
+    .card-cover,
+    .card-inside {
+        padding: 20px;
+    }
+
+    .swiper-container {
+        height: 250px;
+    }
+
+    .swiper-slide {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 10px 25px;
+        margin-top: 15px;
+    }
+
+    .hearts,
+    .sparkles {
+        display: none;
+    }
+}
+
+/* Nút bấm có animation */
+@keyframes buttonPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn:active {
+    animation: buttonPulse 0.3s ease;
+}
+
+/* Cải thiện hiệu ứng khi bấm nút */
+@media only screen and (max-width: 768px) {
+    .btn {
+        background: linear-gradient(to right, #ff758c, #ff7eb3);
+        border: none;
+        padding: 12px 30px;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.5);
+        margin-top: 20px;
+    }
+
+    .btn:hover {
+        background: linear-gradient(to right, #ff5a78, #ff85a1);
+        transform: scale(1.1);
+    }
+}
+
+
 body {
     position: relative;
     display: flex;
@@ -49,6 +128,7 @@ body {
 }
 
 .card {
+    margin: 10px;
     width: 600px;
     height: 350px;
     border-radius: 20px;

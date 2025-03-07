@@ -12,8 +12,13 @@ document.getElementById("nextSlideBtn").addEventListener("click", () => {
 
 const card = document.getElementById("card");
 document.getElementById("openCardBtn").addEventListener("click", () => {
-  card.classList.add("open");
-});
+    document.getElementById("openCardBtn").classList.add("active"); 
+    setTimeout(() => {
+      document.getElementById("openCardBtn").classList.remove("active"); 
+    }, 500);
+    card.classList.add("open");
+  });
+  
 
 function createHeart() {
   const heart = document.createElement("i");
