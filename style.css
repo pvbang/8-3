@@ -211,7 +211,7 @@ body {
 
 /* Cải thiện thanh cuộn nhỏ hơn */
 .swiper-slide::-webkit-scrollbar {
-    width: 6px; /* Giảm độ rộng thanh cuộn */
+    width: 3px; /* Giảm độ rộng thanh cuộn */
 }
 
 .swiper-slide::-webkit-scrollbar-track {
