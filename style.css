@@ -9,6 +9,7 @@
         height: auto;
         max-width: 500px;
         box-shadow: 0px 5px 15px rgba(255, 182, 193, 0.6);
+        padding-top: 20px;
     }
 
     .card-cover,
@@ -22,7 +23,7 @@
 
     .swiper-slide {
         font-size: 18px;
-        padding: 8px;
+        padding: 5px;
     }
 
     .btn {
@@ -130,7 +131,7 @@ body {
 .card {
     margin: 10px;
     width: 600px;
-    height: 350px;
+    min-height: 350px;
     border-radius: 20px;
     box-shadow: 0px 10px 30px rgba(255, 182, 193, 0.6);
     position: relative;
@@ -162,6 +163,7 @@ body {
 .card-inside {
     background: rgba(255, 255, 255, 0.9);
     opacity: 0;
+    padding: 20px;
 
     transform: translateY(20px);
     pointer-events: none;
@@ -181,21 +183,63 @@ body {
 
 .swiper-container {
     width: 90%;
-    height: 60%;
+    height: auto;
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 10px;
+    overflow-y: auto;
 }
 
 .swiper-slide {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Canh giữa nội dung */
+    align-items: flex-start;
     font-size: 24px;
     font-weight: bold;
     text-align: center;
-    padding: 10px;
+    margin-top: 30px;
+    padding: 5px 15px; /* Padding giữa các đoạn văn */
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: hidden;
+    height: auto; /* Tự động thay đổi chiều cao */
+    max-height: 100%;
+    overflow-y: auto; /* Nếu cần cuộn thì cho phép cuộn dọc */
+    position: relative;
+    text-align: left; /* Nội dung không bị căn giữa trong text */
 }
+
+/* Cải thiện thanh cuộn nhỏ hơn */
+.swiper-slide::-webkit-scrollbar {
+    width: 6px; /* Giảm độ rộng thanh cuộn */
+}
+
+.swiper-slide::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); /* Màu nền của thanh cuộn */
+    border-radius: 10px; /* Bo tròn các góc thanh cuộn */
+}
+
+.swiper-slide::-webkit-scrollbar-thumb {
+    background: #ff758c; /* Màu của thanh cuộn */
+    border-radius: 10px; /* Bo tròn các góc thanh cuộn */
+}
+
+/* Thêm padding cho phần cuộn */
+.swiper-slide:has(::-webkit-scrollbar) {
+    padding-top: 20px; /* Thêm padding trên */
+    padding-bottom: 20px; /* Thêm padding dưới */
+}
+
+/* Giữ cho thông tin luôn ở giữa khi không cuộn */
+.swiper-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Canh giữa nội dung */
+    align-items: center;
+    max-height: 100%;
+    padding: 0 10px;
+}
+
 
 .btn {
     background: linear-gradient(to right, #ff758c, #ff7eb3);
